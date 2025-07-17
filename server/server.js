@@ -12,7 +12,7 @@ const showRouter = require('./routes/showRoutes');
 const bookingRouter = require('./routes/bookingRoutes'); // Uncomment if booking routes are needed
 
 app.use(cors({
-  origin: 'http://localhost:3000',
+  origin:'https://verdant-custard-b782fd.netlify.app' ,
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS','PATCH'],
   allowedHeaders: ['Content-Type', 'Authorization'],
