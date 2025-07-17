@@ -3,7 +3,7 @@ import axios from 'axios';
 const token = localStorage.getItem('token');
 
 export const axiosInstance = axios.create({
-  baseURL: 'http://localhost:8090',
+  baseURL: process.env.REACT_APP_BACKEND_URL,
   withCredentials: true, // Only if using cookies/sessions
   headers: {
     'Content-Type': 'application/json',
