@@ -12,7 +12,7 @@ const showRouter = require('./routes/showRoutes');
 const bookingRouter = require('./routes/bookingRoutes'); // Uncomment if booking routes are needed
 
 app.use(cors({
-  origin:'https://verdant-custard-b782fd.netlify.app' ,
+  origin:'https://bookmyflicks.netlify.app' ,
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS','PATCH'],
   allowedHeaders: ['Content-Type', 'Authorization'],
