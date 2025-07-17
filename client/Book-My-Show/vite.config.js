@@ -8,4 +8,7 @@ export default defineConfig({
     port: 3000, // 👈 change to any port you want
     host: 'localhost', // optional, for explicit host
   },
+  define: {
+    'process.env': {}
+  },
 })

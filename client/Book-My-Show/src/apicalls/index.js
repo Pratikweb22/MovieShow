@@ -1,9 +1,10 @@
 import axios from 'axios';
 
+
 const token = localStorage.getItem('token');
 
 export const axiosInstance = axios.create({
-  baseURL: process.env.REACT_APP_BACKEND_URL,
+  baseURL: "https://movie-show-eight.vercel.app",
   withCredentials: true, // Only if using cookies/sessions
   headers: {
     'Content-Type': 'application/json',
