@@ -11,10 +11,22 @@ const theatreRouter = require('./routes/theatreRoutes');
 const showRouter = require('./routes/showRoutes');
 const bookingRouter = require('./routes/bookingRoutes'); // Uncomment if booking routes are needed
 
+const allowedOrigins = [
+  'http://localhost:3000',
+  'https://bookmyflicks.netlify.app'
+];
+
 app.use(cors({
-  origin:'https://bookmyflicks.netlify.app' ,
+  origin: function (origin, callback) {
+    // allow requests with no origin (like mobile apps or curl)
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS','PATCH'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'PATCH'],
   allowedHeaders: ['Content-Type', 'Authorization'],
   preflightContinue: false,
   optionsSuccessStatus: 204

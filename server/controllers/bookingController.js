@@ -21,8 +21,8 @@ const makePayment = async (req, res) => {
         },
       ],
       mode: "payment",
-      success_url: "https://bookmyflicks.netlify.app/payment-success",
-      cancel_url: "https://bookmyflicks.netlify.app/book-show/cancel",
+      success_url: "http://localhost:3000/payment-success",
+      cancel_url: "http://localhost:3000/book-show/cancel",
     });
 
     res.send({ success: true, url: session.url });
